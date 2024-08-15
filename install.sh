@@ -7,13 +7,16 @@ function die {
 
 PRETEND="no"
 FORCE="no"
+QUIET="no"
 
 # CLI arg parsing
 while [[ "$#" -gt 0 ]]; do
   case "$1" in
-    --pretend|-p) PRETEND="yes";;
+    --pretend|-p) PRETEND="yes"; QUIET="yes";;
 
     --force|-f) FORCE="yes";;
+
+    --quiet|-q) QUIET="yes";;
 
     *) die "unknown parameter: $1"
   esac
@@ -23,6 +26,7 @@ done
 
 readonly PRETEND
 readonly FORCE
+readonly QUIET
 
 function run {
   command="$1"
@@ -35,6 +39,14 @@ function run {
     if [[ "$?" -ne "0" ]]; then
       die "\"$command\" exited with non-zero status"
     fi
+  fi
+}
+
+function log {
+  msg="$1"
+
+  if [[ "$QUIET" = "no" ]]; then
+    echo "$msg"
   fi
 }
 
@@ -66,7 +78,7 @@ function install_from_dir {
     src=$(echo "$line" | cut -d":" -f1)
     dst=$(echo "$line" | cut -d" " -f2)
 
-    echo "  - $src"
+    log "    - $src"
     install_file "$dir/$src" "$dst"
   done < "$links_file"
 }
@@ -74,6 +86,6 @@ function install_from_dir {
 find -name "links.txt" \
 | while read -r file; do
   dir=$(dirname "$file")
-  echo "- $dir"
+  log "  - $dir"
   install_from_dir "$dir"
 done 
