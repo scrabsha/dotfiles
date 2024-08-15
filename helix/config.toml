@@ -1,0 +1,38 @@
+theme = "gruvbox"
+
+[editor]
+scrolloff = 10
+idle-timeout = 1
+completion-timeout = 0
+line-number = "relative"
+auto-save = true
+middle-click-paste = true
+scroll-lines = 1
+completion-trigger-len = 1
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+[keys.normal]
+"d" = "move_char_left"
+"n" = "move_char_right"
+"h" = "move_line_down"
+"t" = "move_line_up"
+
+"D" = "move_prev_word_start"
+"N" = "move_next_word_start"
+
+"e" = "delete_selection"
+
+[keys.select]
+"d" = "extend_char_left"
+"n" = "extend_char_right"
+"h" = "extend_line_down"
+"t" = "extend_line_up"
+
+"D" = "extend_prev_word_start"
+"N" = "extend_next_word_start"
+
+"e" = "delete_selection"
+
