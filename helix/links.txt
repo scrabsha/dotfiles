@@ -1,1 +1,2 @@
 config.toml: .config/helix/config.toml
+languages.toml: .config/helix/languages.toml
