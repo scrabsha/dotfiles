@@ -44,7 +44,7 @@ function install_file {
   dst="/home/$USER/$2"
 
   if [[ -f "$dst" ]]; then
-    if [[ -L "$dst" || "$FORCE" = "no" ]]; then
+    if [[ ! -L "$dst" || "$FORCE" = "no" ]]; then
       run "rm \"$dst\""
     else
       die "file \"$dst\" already exists"
