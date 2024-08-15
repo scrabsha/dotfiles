@@ -2,26 +2,56 @@ theme = "gruvbox"
 
 [editor]
 scrolloff = 10
-idle-timeout = 1
-completion-timeout = 0
-line-number = "relative"
-auto-save = true
 middle-click-paste = true
 scroll-lines = 1
+line-number = "relative"
+cursorline = true
+idle-timeout = 0
+completion-timeout = 5
 completion-trigger-len = 1
 
 [editor.lsp]
 display-messages = true
 display-inlay-hints = true
 
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
+after-delay.timeout = 1000
+
+# View mode shortucts
+[keys.normal.z]
+"h" = "scroll_down"
+"t" = "scroll_up"
+
+# Goto mode shortcuts
+[keys.normal.g]
+"d" = "goto_line_start"
+"n" = "goto_line_end"
+"h" = "move_line_down"
+"t" = "move_line_up"
+"l" = "goto_definition"
+
+# Window mode shortcut
+[keys.normal.C-w]
+"d" = "jump_view_left"
+"h" = "jump_view_down"
+"t" = "jump_view_up"
+"n" = "jump_view_right"
+"D" = "swap_view_left"
+"H" = "swap_view_down"
+"T" = "swap_view_up"
+"N" = "swap_view_right"
+
+
+[editor.soft-wrap]
+enable = true
+
 [keys.normal]
 "d" = "move_char_left"
 "n" = "move_char_right"
 "h" = "move_line_down"
 "t" = "move_line_up"
-
-"D" = "move_prev_word_start"
-"N" = "move_next_word_start"
 
 "e" = "delete_selection"
 
@@ -30,9 +60,6 @@ display-inlay-hints = true
 "n" = "extend_char_right"
 "h" = "extend_line_down"
 "t" = "extend_line_up"
-
-"D" = "extend_prev_word_start"
-"N" = "extend_next_word_start"
 
 "e" = "delete_selection"
 
