@@ -28,8 +28,10 @@ after-delay.timeout = 1000
 [keys.normal.g]
 "d" = "goto_line_start"
 "n" = "goto_line_end"
-# "h" = "move_line_down"
-# "t" = "move_line_up"
+"l" = "goto_definition"
+[keys.select.g]
+"d" = "goto_line_start"
+"n" = "goto_line_end"
 "l" = "goto_definition"
 
 # Window mode shortcut
