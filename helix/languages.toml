@@ -24,9 +24,18 @@ command = "ocamllsp"
 
 [[language]]
 name = "rust"
+language-servers = [
+  "rust-analyzer",
+  "gpt"
+]
+
+[language-server.gpt]
+command = "helix-gpt"
 
 [language-server.rust-analyzer.config]
 rust-analyzer.cargo.autoreload = true
 rust-analyzer.cargo.sysroot = "discover"
 rust-analyzer.rustc.source = "discover"
 rust-analyzer.check.command = "clippy"
+rust-analyzer.rustfmt.rangeFormatting.enable = true
+rust-analyzer.lru.capacity = 1024
