@@ -54,6 +54,11 @@ function log {
 function install_file {
   src=$(realpath "$1")
   dst="/home/$USER/$2"
+  dst_dir=$(dirname "$dst")
+
+  if [[ ! -e "$dst_dir" ]]; then
+    run "mkdir -p \"$dst_dir\""
+  fi
 
   if [[ -f "$dst" ]]; then
     if [[ ! -L "$dst" || "$FORCE" = "no" ]]; then
