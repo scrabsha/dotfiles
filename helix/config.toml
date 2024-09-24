@@ -6,8 +6,8 @@ middle-click-paste = true
 scroll-lines = 1
 line-number = "relative"
 cursorline = true
-idle-timeout = 0
-completion-timeout = 5
+idle-timeout = 1
+completion-timeout = 1
 completion-trigger-len = 1
 
 [editor.lsp]
@@ -18,11 +18,6 @@ display-inlay-hints = true
 focus-lost = true
 after-delay.enable = true
 after-delay.timeout = 1000
-
-# View mode shortucts
-[keys.normal.z]
-"h" = "scroll_down"
-"t" = "scroll_up"
 
 # Goto mode shortcuts
 [keys.normal.g]
