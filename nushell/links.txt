@@ -1,0 +1,2 @@
+config.nu: .config/nushell/config.nu
+env.nu: .config/nushell/env.nu
