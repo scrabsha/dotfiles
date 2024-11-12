@@ -25,12 +25,8 @@ command = "ocamllsp"
 [[language]]
 name = "rust"
 language-servers = [
-  "rust-analyzer",
-  "gpt"
+    "rust-analyzer",
 ]
-
-[language-server.gpt]
-command = "helix-gpt"
 
 [language-server.rust-analyzer.config]
 rust-analyzer.cargo.autoreload = true
