@@ -1,0 +1,4 @@
+inherits = "gruvbox_dark_hard"
+
+"ui.window" = { fg = "bg2" }
+"ui.cursor.match" = { modifiers = ["bold"], underline = { style = "double_line", color = "red1" } }

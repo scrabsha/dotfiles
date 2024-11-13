@@ -1,3 +1,4 @@
 config.toml: .config/helix/config.toml
 languages.toml: .config/helix/languages.toml
 yazi-picker.sh: .config/helix/yazi-picker.sh
+gruvbox-custom.toml: .config/helix/themes/gruvbox-custom.toml
